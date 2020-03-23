@@ -1,0 +1,14 @@
+[Sorscher, Mel 2019]
+
+Mechanistic models account for hexagonal grids as the result of pattern-forming dynamics in a recurrent neural network with hand tuned center-surround connectivity
+Normative models show the emergence of grid-cells from a neural architecture trained to solve a navigational task, due to the constraints of solving this task.
+This work reproduces the results from different normative models and provides a theoretical unification of the two approaches.
+
+Reproducing: [10]https://elifesciences.org/articles/10094 [13]https://arxiv.org/abs/1803.07770 [14]https://www.nature.com/articles/s41586-018-0102-6
+
+Virtual rat model (from 10.1111/j.1460-9568.2012.08015.x.):
+The rat uses first order motion dynamics, i.e. constant speed and no acceleration. It can detect and avoid obstacles by a limited line-of-sight mechanism: the rat's direction is obstructed if an obstacle is closer than 2 cm to his position, otherwise the direction is free. The virtual rat has two possible behaviors: exploration and target seeking. During exploration the rat iteratively picks random transient waypoints inside is line-of-sight area. The speed of the virtual rat throughout the navigation is constant at 20 cm/s except during the
+forward linear look-ahead trajectory probes during which the virtual rat is stationary. The virtual rat performs a full scan of forward linear look-ahead trajectory
+probes after every 4 cm of travel.
+
+
