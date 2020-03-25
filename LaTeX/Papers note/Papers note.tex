@@ -1,0 +1,54 @@
+\documentclass{article}
+
+
+\title{Papers notes}
+\author{Simone Poetto}
+\date{March 2020}
+
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfig}
+
+
+\begin{document}
+
+
+\maketitle
+
+\section{Grid pattern formation}
+Notes on \cite{Sorscher}
+\subsection{Introduction}
+Mechanistic models account for hexagonal grids as the result of pattern-forming dynamics in a recurrent neural network with hand tuned center-surround connectivity\\
+Normative models show the emergence of grid-cells from a neural architecture trained to solve a navigational task, due to the constraints of solving this task.
+This work reproduces the results from different normative models and provides a theoretical unification of the two approaches.
+
+\subsection{1-layer NN}
+Unsupervised hebbian learning is performed on Np input units (number of place cells) with Ng output units.\\
+The synaptic weigths W are updated according to the
+a generalized Hebbian with two terms: the first is the hebbian rule itself and the second implements a Gram-Schmidt like orthogonalization.\\
+This is equivalent to perform PCA on P (input matrix).
+To force non-negativity just perform NNNF on P.
+\newpage
+\subsection{RNN}
+The RNN is trained to perform a task of path integration.
+The network has a vanilla RNN architecture: 2 linear input units for x and y velocity, a set of recurrently connected hidden units, and linear readout units.
+
+The network update rule and output prediction equation are the following:
+$$
+\begin{array}{c}r^{t+1}=\sigma\left[J r^{t}+M \vec{v}^{t}\right] \\ p^{t}=W r^{t}\end{array}
+$$
+
+Where v is the velocity input, M is the network's input weights, r is the vector of neuron activities, J is the matrix of recurrent weights. $\sigma$ is a pointwise tanh nonlinearity. p is the vector of estimated place cell activities and W is the place cell readout weights.\\
+Network was trained using batches of 200 trajectories and RMSProp to minimize the cross-entropy beetween estimated and true place cell activities. To implement non-negativity the tanh is replaced by ReLU.
+
+\subsection{LSTM}
+The task and training protocol were identical to that of the RNN.
+The model architecture consist of of x and y velocity inputs to an LSTM with 128 units, followed by a linear layer of 512 units, followed by a final readout to the estimated place cell activities.
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}
+
+}
