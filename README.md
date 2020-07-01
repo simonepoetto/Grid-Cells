@@ -10,7 +10,8 @@ Notebooks to test and compare TDA libraries on the ratemaps
 * [**utils**](utils) folder:
 Utility functions for maniupalting the data
 
-* [**gridness**](gridness) folder:
-  * [**manually_generated_activations**](gridness/manually%20generated%20activations): tda experiments on manually generated perfect grids.
-  * [**scorer_explore**](gridness/scorer_explore.ipynb): visualization of how gridness score is computed in literature
-  * [**gridness_analisys_pipeline**](gridness/gridness_analisys_pipeline.ipynb): work in progress...
+* [**gridness**](gridness) folder: evaluate gridness, review of methods used in literature and experiments with TDA tecniques
+
+* [**clustering**](clustering) folder: apply TDA to cluster ratemaps based on topological features
+  * [**Distance matrix comparison**](clustering/dis_matrices_comparison.ipynb): comparison of distance matrices between persistence diagrams, based on diffent metrics
+  * [**Clustering visualization**](clustering/clustering_results_silhouettte'.ipynb): visualization of clustering based on hierarchical techniques.
